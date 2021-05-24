@@ -31,6 +31,7 @@ Create TinyURLs via Slack Modal
    - `SIGNING_SECRET` - generated on the **Basic Information** tab
 
 ```
+// .env
 DBCONNECTION=
 REQUEST_URL=
 BOTTOKEN=

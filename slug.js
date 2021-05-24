@@ -4,7 +4,7 @@ const TinyURLModal = require('./TinyUrlModal');
 
 const nanoid = customAlphabet(urlAlphabet, 6);
 
-const HOSTURL = process.env.HOSTURL;
+const HOSTURL = process.env.REQUEST_URL;
 
 exports.createSlug = (req) => {
   const payload = JSON.parse(req.body.payload);

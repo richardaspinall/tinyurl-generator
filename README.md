@@ -1,4 +1,4 @@
-# Slack TinyURL Generator
+# TinyURL Generator
 
 > **Date started**: September 2020
 
@@ -6,28 +6,35 @@
 
 ## Description
 
-Slack App for creating TinyURLs
+Create TinyURLs via Slack Modal
 
 ---
 
 ## Requirements
 
-- Requirements for installation
+- node (https://nodejs.org/en/)
+- NPM (https://www.npmjs.com/)
+- MongoDB (https://www.mongodb.com/)
+- ngrok (https://ngrok.com/)
 
-## Install
+## Install & Configure
 
-- How to install
+1. Run `npm install`
+2. Run `ngrok http 3000` to create a tunnel from a public URL to your localhost (https://ngrok.com/docs). _Note:_ you can add a `-region` flag to create a local server for low latency https://ngrok.com/docs#global-locations
+3. Edit `settings.request_url` in the `slack-manifest.json` with your public URL
+4. Create a Slack app here: https://api.slack.com/apps/new choosing **From an app manifest** and add the JSON from `slack-manifest.json`
+5. Install the app and note the **Bot User OAuth Token**
+6. Create a `.env` file and add `DBCONNECTION` – URL for connecting to MongoDB, `REQUEST_URL` – your public domain for Slack to send requests to, `BOTTOKEN` – token generated from Slack
+
+```
+DBCONNECTION=
+REQUEST_URL=
+BOTTOKEN=
+```
 
 ## Usage
 
-- How to use
-
----
-
-## Goals
-
-Goals of the project either for learning purposes or for actual use
-
-## Results
-
-### What I learned
+1. Run `ngrok http 3000`
+2. Run `npm run start` in another terminal window
+3. In Slack click the lightning bolt next to the input and search for `tinyurl-generator`
+4. Enter a URL and submit

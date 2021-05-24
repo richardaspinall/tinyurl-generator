@@ -19,7 +19,7 @@ const sendSlackWeb = (url, json) => {
     });
 };
 
-exports.messageController = (req, res) => {
+exports.viewController = (req, res) => {
   const payload = JSON.parse(req.body.payload);
   switch (payload.type) {
     case 'shortcut':
@@ -30,7 +30,7 @@ exports.messageController = (req, res) => {
           type: 'modal',
           title: {
             type: 'plain_text',
-            text: 'TinyUrl Creator',
+            text: 'TinyUrl Generator',
             emoji: true,
           },
           submit: {
@@ -63,9 +63,6 @@ exports.messageController = (req, res) => {
       break;
     case 'view_submission':
       const tinyUrl = createSlug(req);
-
-      // Empty status response (res.sendStatus also sends a body)
-      // console.log(res.status(200).send());
       res.set({ 'content-type': 'application/json' });
 
       res.send({
@@ -74,7 +71,7 @@ exports.messageController = (req, res) => {
           type: 'modal',
           title: {
             type: 'plain_text',
-            text: 'TinyUrl Creator',
+            text: 'TinyUrl Generator',
           },
           close: {
             type: 'plain_text',

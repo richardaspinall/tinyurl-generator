@@ -1,0 +1,20 @@
+{
+  "name": "tinyurl-generator",
+  "version": "1.0.0",
+  "description": "Generates a TinyUrl given a URL",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Richard Aspinall",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.25",
+    "morgan": "^1.10.0",
+    "nanoid": "^3.1.10",
+    "superagent": "^5.3.1"
+  }
+}

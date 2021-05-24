@@ -24,12 +24,17 @@ Create TinyURLs via Slack Modal
 3. Edit `settings.request_url` in the `slack-manifest.json` with your public URL
 4. Create a Slack app here: https://api.slack.com/apps/new choosing **From an app manifest** and add the JSON from `slack-manifest.json`
 5. Install the app and note the **Bot User OAuth Token**
-6. Create a `.env` file and add `DBCONNECTION` – URL for connecting to MongoDB, `REQUEST_URL` – your public domain for Slack to send requests to, `BOTTOKEN` – token generated from Slack
+6. Create a `.env` file and add the following variables:
+   - `DBCONNECTION` – URL for connecting to MongoDB
+   - `REQUEST_URL` – your public domain for Slack to send requests to
+   - `BOTTOKEN` – generated from Slack when app is installed (found on the **Install App** tab)
+   - `SIGNING_SECRET` - generated on the **Basic Information** tab
 
 ```
 DBCONNECTION=
 REQUEST_URL=
 BOTTOKEN=
+SIGNING_SECRET=
 ```
 
 ## Usage

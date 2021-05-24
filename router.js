@@ -6,7 +6,11 @@ const { viewController } = require('./viewController');
 
 // Endpoint that gets called via a trigger in Slack
 router.post('/tinyurlgenerator', (req, res) => {
-  viewController(req, res);
+  if (req.valid === true) {
+    viewController(req, res);
+  } else {
+    return res.sendStatus(404);
+  }
 });
 
 router.get('/notfound', (req, res) => {

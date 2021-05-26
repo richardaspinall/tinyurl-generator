@@ -83,7 +83,7 @@ exports.viewController = (req, res) => {
               type: 'section',
               text: {
                 type: 'mrkdwn',
-                text: `Here is your TinyUrl ${tinyUrl}`,
+                text: `*TinyUrl:* \n ${tinyUrl}`,
               },
             },
           ],

@@ -40,7 +40,7 @@ SIGNING_SECRET=
 
 ## Usage
 
-1. Run `ngrok http 3000`
+1. Run `ngrok http 3000` (ensuring your public URL in the Slack config and `.env` matches – see **Install & Configure**)
 2. Run `npm run start` in another terminal window
 3. In Slack click the lightning bolt next to the input and search for `tinyurl-generator`
 4. Enter a URL and submit

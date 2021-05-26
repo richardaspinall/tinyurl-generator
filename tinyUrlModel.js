@@ -7,6 +7,6 @@ const urlEntry = new Schema({
   slug: String,
   url: String,
 });
-const TinyURLModal = mongoose.model('TinyUrl', urlEntry);
+const tinyURLModel = mongoose.model('TinyUrl', urlEntry);
 
-module.exports = TinyURLModal;
+module.exports = tinyURLModel;

@@ -1,6 +1,6 @@
 const { customAlphabet, urlAlphabet } = require('nanoid');
 const assert = require('assert');
-const TinyURLModal = require('./tinyUrlModal');
+const tinyURLModel = require('./tinyURLModel');
 
 const nanoid = customAlphabet(urlAlphabet, 6);
 
@@ -12,7 +12,7 @@ exports.createSlug = (req) => {
   const slug = nanoid();
   const tinyUrl = `${HOSTURL}/${slug}`;
 
-  TinyURLModal.create({ slug: `${slug}`, url: `${fullUrl}` });
+  tinyURLModel.create({ slug: `${slug}`, url: `${fullUrl}` });
 
   return tinyUrl;
 };
@@ -20,7 +20,7 @@ exports.createSlug = (req) => {
 exports.redirectToSlug = (req, res) => {
   const { id: slug } = req.params;
 
-  TinyURLModal.findOne({ slug: `${slug}` }, function (err, docs) {
+  tinyURLModel.findOne({ slug: `${slug}` }, function (err, docs) {
     assert.equal(err, null);
     console.log('Found the following records');
     console.log(docs);

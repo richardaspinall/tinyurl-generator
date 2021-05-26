@@ -1,6 +1,6 @@
 const { customAlphabet, urlAlphabet } = require('nanoid');
 const assert = require('assert');
-const TinyURLModal = require('./TinyUrlModal');
+const TinyURLModal = require('./tinyUrlModal');
 
 const nanoid = customAlphabet(urlAlphabet, 6);
 

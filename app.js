@@ -16,7 +16,7 @@ app.use(
 
 app.use('/', router);
 
-mongoose.connect(process.env.DBCONNECTION, {
+mongoose.connect(process.env.DB_CONNECTION, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

@@ -1,10 +1,10 @@
 const request = require('superagent');
-const { createSlug } = require('./slug.js');
+const { createSlug } = require('../slug.js');
 
-const sendSlackWeb = (url, json) => {
+const postRequest = (url, json) => {
   const httpHeaders = {
     'Content-type': 'application/json; charset=utf-8',
-    Authorization: `Bearer ${process.env.BOTTOKEN}`,
+    Authorization: `Bearer ${process.env.BOT_TOKEN}`,
   };
   request
     .post(url)
@@ -24,7 +24,7 @@ exports.viewController = (req, res) => {
   switch (payload.type) {
     case 'shortcut':
       res.sendStatus(200);
-      sendSlackWeb('https://slack.com/api/views.open', {
+      postRequest('https://slack.com/api/views.open', {
         trigger_id: payload.trigger_id,
         view: {
           type: 'modal',
